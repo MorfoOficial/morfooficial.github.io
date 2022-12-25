@@ -27,12 +27,12 @@ img {
 Estas líneas de CSS las usaremos para dar estilo a la cabecera:
 
 #main-header {
-	background: #333;
-	color: white;
-	height: 80px;
+	background: #fff000;
+	color: red;
+	height: 60px;
 }	
 	#main-header a {
-		color: white;
+		color: red;
 	}
 
 /*
