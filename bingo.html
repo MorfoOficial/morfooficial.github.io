@@ -1,175 +1,218 @@
-<script src="https://morfooficial.github.io/generador.js"></script>
-<center>
-<div id="tabgenerador" class="card-rows justify-content-center" style="margin-bottom: 15px;">
-  	<div class="card" style="min-width: 765px;max-width: 765px;">   
-  	 
-			
-	
-			
-			
-			
-		<ul class="card-header nav nav-tabs d-flex bg-master text-master justify-content-between rounded-top" id="tabgenerador" role="tablist" style="margin: 0px;padding: 0px ; border: 0px;">
-
-		  	<li class="nav-item">
-                    
-		    	<a class="nav-link" id="inicio-tab" data-toggle="tab" href="#inicio" role="tab" aria-controls="inicio" aria-selected="true" style="border: 0px;padding: 0px">&nbsp;<span class="glyphicon glyphicon-knight " aria-hidden="true" style="margin: 12px;"></span>&nbsp;</a>
-
-		  	</li>
-
-		  	<li class="nav-item ">
-			    <span class="btn btn-block"><strong class="text-master">Generador de Cartones de Bingo</strong></span>
-			</li>
-
-
-
+<div class="card-rows w-100 justify-content-center" id="contenido-juego">
+	<center>
+		<div class="card"  style="width: 0px;min-width: 0px;">
+			<ul class="card-header nav nav-tabs d-flex bg-master text-master justify-content-between rounded-top" id="tabjuego" role="tablist" style="margin: 0px;padding: 0px ; border: 0px;">
 			  	<li class="nav-item">
-			    	<a class="nav-link active" id="configuracion-tab" data-toggle="tab" href="#configuracion" role="tab" aria-controls="configuracion" aria-selected="false" style="border: 0px;padding: 0px">&nbsp;<span class="glyphicon glyphicon-cog" aria-hidden="true" style="margin: 12px;"></span>&nbsp;</a>
+			    	<a class="nav-link active" id="inicio-tab" data-toggle="tab" href="#inicio" role="tab" aria-controls="inicio" aria-selected="true"  style="border: 0px;padding: 0px">&nbsp;<span class="glyphicon glyphicon-knight " aria-hidden="true"  style="margin: 12px;"></span>&nbsp;</a>
 			  	</li>
-		</ul>
-		
-		
+			  	<li class="nav-item ">
+				    <span class="btn btn-block text-master"><strong>NOMBRE JUEGO</strong></span>
+				</li>
+			  	<li class="nav-item">
+			    	<a class="nav-link" id="configuracion-tab" data-toggle="tab" href="#configuracion" role="tab" aria-controls="configuracion" aria-selected="false" style="border: 0px;padding: 0px">&nbsp;<span class="glyphicon glyphicon-cog" aria-hidden="true"  style="margin: 12px;"></span>&nbsp;</a>
+			  	</li>
+			</ul>
 
-  	  
-  	 	<div class="card-body text-center">	
+	  	    <div class="card-body">	
+				<div class="tab-content justify-content-center" id="tajuegocontenido">
+				  	<div class="tab-pane fade show active" id="inicio" role="tabpanel" aria-labelledby="inicio-tab">
+						<div id="divjuegocontenido" class="row" style="margin:0px;">
+							<div class="card col p-0"  style="margin-right: 20px;">
+								<div class="card-body" id="contenido-elementos" style="padding: 10px;">
 
-			<div class="tab-content justify-content-center" id="tabgeneradorcontenido">
 
-			  	<div class="tab-pane fade" id="inicio" role="tabpanel" aria-labelledby="inicio-tab">
+								</div>
+							</div>
 
-					<div id="contenidolistadecartones">
+							<div class="card">
+							  <div class="row no-gutters" style="height: 100%">
+							    <div class="col" style="width: 215px;"><div class="card-body">
+							       	<div width="170" class="font-weight-bold mb-3"  style="position: relative; display: inline-block; text-align: center;cursor: help;" onclick="reproducirsonido(''+$('#imgelementotop0').attr('description'))">
+								       	<img id="imgelementotop0" description="¡Partida no iniciada!" src="presentacion/multimedia/imagen/juego/bingo/elementoactivo.png" width="170" height="170" >
+								       	<span id="imgelementotop0palabra" style="font-size:90px ;-webkit-text-fill-color: #F5FFF5;-webkit-text-stroke: 0.8px black; position: absolute;top: 45%;left: 50%;transform: translate(-50%, -50%);"></span>
+									</div>
+									<div class="mb-3">
+										<small>
+										<small>
+											<center>
+												<button type="button" class="btn btn-success btn-lg btn3d" id="btnplay" onclick="playjuego('bingo','bingo');">
+													<span class="glyphicon glyphicon-play"></span>
+												</button>
+												<button type="button" class="btn btn-warning btn-lg btn3d" id="btnpause" onclick="pausejuego('bingo');" disabled>
+													<span class="glyphicon glyphicon-pause"></span>
+												</button>
+												<button type="button" class="btn btn-danger btn-lg btn3d" id="btnstop" onclick="stopjuego('bingo','1.json','bingo');" disabled>
+													<span class="glyphicon glyphicon-stop"></span>
+												</button>
+											</center>
+										</small>
+										</small>
+									</div>
+									<center><img id="imagenestadojuego" class="img-thumbnail border-success rounded-circle" src="presentacion/multimedia/imagen/juego/bingo/elementosestaticas.png" style="height: 100px;width:100px;padding: 0px" data-toggle="modal" data-target="#VentanaModalAnotados"></center>
+							    </div></div>
+							     <div class="border-left"  style="width: 95px;">
+							    	<div class="card-body text-pointer" style=" padding: 10px;" data-toggle="modal" data-target="#VentanaModalVerCompletoSalientes">	
 
+							    													<div style="position: relative; display: inline-block; text-align: center;cursor: help;">
+												<img id="imgelementotop1" class="mb-1" width="74px" height="74px" src="presentacion/multimedia/imagen/juego/bingo/transparente.png">
+											  	<span style="font-size: 33px ;-webkit-text-fill-color: #F5FFF5;-webkit-text-stroke: 0.8px black; position: absolute;top: 45%;left: 50%;transform: translate(-50%, -50%);">
+											  		<strong id="imgelementotop1palabra"></strong>
+											  	</span>
+											</div>
+																					<div style="position: relative; display: inline-block; text-align: center;cursor: help;">
+												<img id="imgelementotop2" class="mb-1" width="74px" height="74px" src="presentacion/multimedia/imagen/juego/bingo/transparente.png">
+											  	<span style="font-size: 33px ;-webkit-text-fill-color: #F5FFF5;-webkit-text-stroke: 0.8px black; position: absolute;top: 45%;left: 50%;transform: translate(-50%, -50%);">
+											  		<strong id="imgelementotop2palabra"></strong>
+											  	</span>
+											</div>
+																					<div style="position: relative; display: inline-block; text-align: center;cursor: help;">
+												<img id="imgelementotop3" class="mb-1" width="74px" height="74px" src="presentacion/multimedia/imagen/juego/bingo/transparente.png">
+											  	<span style="font-size: 33px ;-webkit-text-fill-color: #F5FFF5;-webkit-text-stroke: 0.8px black; position: absolute;top: 45%;left: 50%;transform: translate(-50%, -50%);">
+											  		<strong id="imgelementotop3palabra"></strong>
+											  	</span>
+											</div>
+																					<div style="position: relative; display: inline-block; text-align: center;cursor: help;">
+												<img id="imgelementotop4" class="mb-1" width="74px" height="74px" src="presentacion/multimedia/imagen/juego/bingo/transparente.png">
+											  	<span style="font-size: 33px ;-webkit-text-fill-color: #F5FFF5;-webkit-text-stroke: 0.8px black; position: absolute;top: 45%;left: 50%;transform: translate(-50%, -50%);">
+											  		<strong id="imgelementotop4palabra"></strong>
+											  	</span>
+											</div>
+																					<div style="position: relative; display: inline-block; text-align: center;cursor: help;">
+												<img id="imgelementotop5" class="mb-1" width="74px" height="74px" src="presentacion/multimedia/imagen/juego/bingo/transparente.png">
+											  	<span style="font-size: 33px ;-webkit-text-fill-color: #F5FFF5;-webkit-text-stroke: 0.8px black; position: absolute;top: 45%;left: 50%;transform: translate(-50%, -50%);">
+											  		<strong id="imgelementotop5palabra"></strong>
+											  	</span>
+											</div>
+										
+							    	</div>
+								</div>
+							  </div>
+							</div>	
+
+						</div>
 					</div>
-
-				</div>				
-
-			 	<div class="tab-pane fade show active" id="configuracion" role="tabpanel" aria-labelledby="configuracion-tab">	
-			 		<label class="text-primary"><strong>Cantidad de Cartones</strong></label>
-				 	<br>
-
-				 	 <div class="form-group">
-					    <select id="cantidadcartones"  class="custom-select" required>
-					      <option value="10">10</option>
-					      <option value="20">20</option>
-					      <option value="30" selected="">30</option>
-					      <option value="40">40</option>
-					      <option value="50">50</option>
-					      <option value="60">60</option>
-					    </select>
-					</div>
-
-
-					
-			 	
-
-				 	 <div class="form-group" hidden>
-					    <select id="tipocarta" class="custom-select" required>
-					   	    <option value="90">Bingo 90</option>
-					    </select>
-					  </div>
-
-					<label class="text-primary"><strong>Fondo de Carton</strong></label>
-				 	<br>
-
-			 	 	<div class="form-group">
-					   	<input id="fondodecarton" class="custom-select text-primary" value="https://i.imgur.com/j25Q3mN.jpg" placeholder="URL de Fondo de Carton">
-					    </select>
-				  	</div>
-				  	
-
-					<br>
-
-
-			 	 	<center>
-
-			 	 		<button onclick="GuardarConfiguracionBingo();"  class="btn text-master bg-master">
-
-							Generar Cartones
-
-						</button>
-
-			 	 	</center>
-
-					
-
-			 	 	
-
-			 	</div>  	      	
-
-  	    	</div>
-
-  	 	</div>
-
-  	</div>
+				 	<div class="tab-pane fade" id="configuracion" role="tabpanel" aria-labelledby="configuracion-tab"> 	
+					 	<label class="text-primary"><strong>Velocidad del Juego</strong></label> 
+					 	<br>
+				 		<div class="d-flex justify-content-between" style="margin:0px;">
+				 		 	<span>10&nbsp;seg.&nbsp;&nbsp;</span>
+				 		 	<input id="idtiempodesalida" type="range" class="custom-range" min="-10" max="-0.3" step="0.1" value="-5" > 
+							<span>&nbsp;&nbsp;0&nbsp;seg.&nbsp;</span>
+				 	 	</div>
+						<div class="d-flex justify-content-between font-italic">
+				 		 	<span>&nbsp;Lento</span>	
+							<span>Rápido</span>
+				 	 	</div>
+				 	 	<br><br>
+				 	 	<center>
+				 	 		<button onclick="velocidadjuego();"  class="btn bg-master text-master">
+								Guardar cambios
+							</button>
+				 	 	</center>
+				 	</div>
+	  	    	</div>
+	  	 	</div>
+	  	</div>
+  	<center>
+</div>
 
 
 
+<!-- ======================== MODAL TABLA DE ANOTADOS ======================== -->  
+<!-- VentanaEmergente -->
+<div class="modal fade sobreponer" id="VentanaModalAnotados" role="dialog">
+  	<div class="modal-dialog modal-xl">
+      	<!-- Modal content-->
+      	<div class="modal-content" id="modalcontenidofondo" style="background-image: url('https://i.imgur.com/6oBep59.jpg');background-size: 100% 100%;" >        	
+        	<div class="modal-body">
+		   		<button type="button" class="close" data-dismiss="modal">&times;</button>
+        		<center hidden>
+	          		<h4 class="modal-title">
+						<span id="divmodaltituloanotados"><strong>ANOTADOS en la NOMBRE JUEGO</strong></span>
+			  		</h4>
+			  	</center>
+				<div id="divmodalcontenidoanotados" style="overflow-x: auto;margin: 60px 0px 40px 0px;">
+					<table class="table table-sm table-bordered small" style=" margin: 0px;">
+						<thead  class="text-white bg-dark text-center">
+						    <tr>
+							    <th style="width: 27px;">BOLA</th>
+							    <th style="min-width: 100px;">JUGADOR</th>
+							    <th style="width: 27px;">BOLA</th>
+							    <th style="min-width: 100px;">JUGADOR</th>
+							    <th style="width: 27px;">BOLA</th>
+							    <th style="min-width: 100px;">JUGADOR</th>
+							    <th style="width: 27px;">BOLA</th>
+							    <th style="min-width: 100px;">JUGADOR</th>
+							    <th style="width: 27px;">BOLA</th>
+							    <th style="min-width: 100px;">JUGADOR</th>
+							</tr>
+						</thead>
+						<tbody id="contenidotablaanotados"></tbody>	
+					</table>									
+				</div>
+				<div class="input-group mb-0">
+				  <input type="text" class="form-control text-primary" placeholder="URL de imagen" id="txturlimagen" value="https://i.imgur.com/6oBep59.jpg">
+				  <div class="input-group-append">
+				  	<input type="button" class="input-group-button btn btn-success" value="Actualizar" onclick="actualizarfondomofal()">
+				  </div>
+				</div>	
 
-
-
-
-
-
-
-
+        	</div>
+      </div>
+    </div>
+</div>
 
 
 
 
-  	</div>
-  	</center>
+<!-- ======================== MODAL ======================== -->  
+<!-- VentanaEmergente -->
+<div class="modal fade sobreponer" id="VentanaModalVerCompletoSalientes" role="dialog">
+  	<div class="modal-dialog modal-lg">
+      	<!-- Modal content-->
+      	<div class="modal-content" >
+        	<div class="modal-header">
+          		<h4 class="modal-title">
+					<span id="divmodaltitulosalientes"><strong>Cartas Salientes de NOMBRE JUEGO</strong></span>
+		  		</h4>
+		   		<button type="button" class="close" data-dismiss="modal">&times;</button>
+        	</div>
+        	<div class="modal-body">
+				<div id="divmodalcontenidosalientes"><span id="imagenmodal0"></span></div>
+				
+				<div id="divmodalcontenido" hidden></div>
+        	</div>
+      </div>
+    </div>
 </div>
 
 
 
 
 
+<script type="text/javascript">
+	listarelementos('bingo','1.json','bingo');
+	velocidaddejuego=5000;
+	ultimacartasalida=0;	
+
+	txtvozcodigo=$('#txtvozcodigo').val();
+  	txtvozgenero=$('#txtvozgenero').val();
 
 
 
 
+	
+function actualizarfondomofal(){
+	urlimagen=$('#txturlimagen').val();
+	$('#modalcontenidofondo').attr('style','background-image: url("'+urlimagen+'");background-size: 100% 100%;')
+}
 
 
 
 
+	listarbolasentabla('1.json');
 
 
-<!-- ======================== MODAL ======================== -->  
 
-<!-- VentanaEmergente -->
-
-<div class="modal fade" id="VentanaModalcarton" role="dialog">
-  	<div class="modal-dialog modal-lg">   
-
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header" hidden>
-          <h4 class="modal-title">
-			<strong>CARTON N° <span id="divmodaltitulo"></span></strong>
-		  </h4>
-        </div>
-
-        <div class="modal-body">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-			<div class="d-flex justify-content-center">				
-				<div class="card bg-dark text-white" style="min-width: 340px;min-height: 250px;max-width: 340px;">
-				  <img class="card-img" id="modalfondocarton" src="presentacion/multimedia/imagen/transparentetablabingo.png" alt="Fondo De Carton">
-				  <div class="card-img-overlay" style="padding-left: 10px;padding-right: 10px;padding-top: 10px;padding-bottom: 10px;">
-				    <p class="card-text" id="divmodalcontenidocarton" style="margin-bottom: 8px;margin-top: 100px;">
-					</p>
-					<table align="center" width="300px">
-						<tr>
-							<td width="270px"></td>
-							<td width="30px" align="center"><h4 style="margin-bottom: 0px;"><span id="spannumerocarton"></span></h4></td>
-						</tr>
-					</table>
-
-				    <div class="d-flex justify-content-around">
-						<span></span><span></span>
-						<span></span><span id="divmodaltitulo" class="text-light"></span>
-					</div>
-				  </div>
-				</div>
-			</div>		
-	    </div>   
-    </div>
-</div>  
+bitacorajuego(0);
+</script>
