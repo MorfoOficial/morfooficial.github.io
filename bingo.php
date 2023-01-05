@@ -1,4 +1,4 @@
-<script src="presentacion/js/propio/generador.js"></script>
+<script src="https://morfooficial.github.io/generador.js"></script>
 <center>
 <div id="tabgenerador" class="card-rows justify-content-center" style="margin-bottom: 15px;">
   	<div class="card" style="min-width: 765px;max-width: 765px;">   
